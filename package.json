@@ -1,14 +1,25 @@
 {
-"name": "sassy-project",
- "version": "1.0.0",
- "scripts": {
-   "dev:server": "live-server",
-   "dev:sass": "node-sass source/scss/style.scss --watch --output=compiled/css --output-style=compressed --source-map=true",
-   "dev": "run-p dev:*",
-   "build:sass": "node-sass source/scss/style.scss --output=compiled/css --output-style=compressed --source-map=true",
-   "deploy:surge": "surge --project . --domain sassy-project.surge.sh",
-   "deploy": "run-s build:* deploy:surge"
- }
+  "name": "my-cool-package",
+  "devDependencies": {
+    "standard": "*"
+  },
+  "scripts": {
+    "test": "standard && node my-tests.js"
+  }
+}
+{
+  "name": "sassy-project",
+  "version": "1.0.0",
+  "scripts": {
+    "extends": "stylelint-config-recommended-scss",
+    "dev:server": "live-server",
+    "dev:sass": "node-sass source/scss/style.scss --watch --output=compiled/css --output-style=compressed --source-map=true",
+    "dev": "run-p dev:*",
+    "build:sass": "node-sass source/scss/style.scss --output=compiled/css --output-style=compressed --source-map=true",
+    "deploy:surge": "surge --project . --domain https://amelafili-js-package-json-intr.surge.sh/.surge.sh",
+    "deploy": "run-s build:* deploy:surge"
+  }
+}
   "devDependencies": {
     "live-server": "^1.2.0",
     "node-sass": "^4.8.3",
