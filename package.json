@@ -15,16 +15,13 @@
     "deploy": "run-s build:* deploy:surge"
   },
   "devDependencies": {
+    "htmlhint": "^0.9.13",
     "live-server": "^1.2.0",
     "node-sass": "^4.8.3",
     "nodemon": "^1.17.3",
     "npm-run-all": "^4.1.2",
+    "standard": "^11.0.1",
+    "stylelint": "^9.2.0",
     "stylelint-config-standard": "^18.2.0",
     "surge": "^0.20.1"
-  },
-  "dependencies": {
-    "htmlhint": "^0.9.13",
-    "standard": "^11.0.1",
-    "stylelint": "^9.2.0"
   }
-}
