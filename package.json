@@ -1,0 +1,27 @@
+{
+  "name": "sassy-project",
+  "version": "1.0.0",
+  "scripts": {
+    "build:htmlhint": "npm i htmlhint",
+    "build:styelint": "npm i stylelint",
+    "build:standard": "npm i standard",
+    "build:stylelint-config-standard": "npm install stylelint-config-standard --save-dev",
+    "build:sass": "node-sass source/scss/style.scss --output=compiled/css --output-style=compressed --source-map=true",
+    "extends": "stylelint-config-recommended-scss",
+    "dev:server": "live-server",
+    "dev:sass": "node-sass source/scss/style.scss --watch --output=compiled/css --output-style=compressed --source-map=true",
+    "dev": "run-p dev:*",
+    "deploy:surge": "surge --project . --domain https://amelafili-js-package-json-intr.surge.sh/.surge.sh",
+    "deploy": "run-s build:* deploy:surge"
+  },
+  "devDependencies": {
+    "htmlhint": "^0.9.13",
+    "live-server": "^1.2.0",
+    "node-sass": "^4.8.3",
+    "nodemon": "^1.17.3",
+    "npm-run-all": "^4.1.2",
+    "standard": "^11.0.1",
+    "stylelint": "^9.2.0",
+    "stylelint-config-standard": "^18.2.0",
+    "surge": "^0.20.1"
+  }
